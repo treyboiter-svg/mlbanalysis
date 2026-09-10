@@ -1,0 +1,1117 @@
+{
+  "kind": "glossary_and_formulas",
+  "contract_version": "90.0.0",
+  "product": "MLB Daily Pitch Environment",
+  "companion_to": "SNAPSHOTS_2026-08-31_to_2026-09-09",
+  "word_file": "GLOSSARY_AND_FORMULAS.docx",
+  "not": [
+    "fitted intercept",
+    "ridge",
+    "sample-mean 9.11",
+    "z-score toward last week",
+    "OVER/UNDER lean %",
+    "CALM/STANDARD bins",
+    "0.1 dead-zone",
+    "Savant Active Spin leaderboard",
+    "invented spin"
+  ],
+  "sign_convention": "Positive pitcher_net / pitch_net = pitcher help. Labels follow the physics number's sign.",
+  "questions": [
+    {
+      "id": "pitch",
+      "question": "Does tonight's air help or hurt THIS pitch, for THIS pitcher, right now?",
+      "uses": "First-pitch rho, P, rain, gusts, wind x this pitch velo/rpm/active spin x this pitcher's live air baseline (schedule + acclimation) + body clock",
+      "same_for_both_starters": false
+    },
+    {
+      "id": "mix",
+      "question": "Does that mix add up for the starter?",
+      "uses": "Usage-weighted mean of those pitch scores (break + speed + command + pickup)",
+      "same_for_both_starters": false
+    },
+    {
+      "id": "carry",
+      "question": "If a fly ball is hit, how far does it go?",
+      "uses": "Same park air vs ISA 20 C sea-level (400-ft reference)",
+      "same_for_both_starters": true,
+      "notes": "Does not apply if there are no hits. Not a pitcher score. Home side != home air."
+    }
+  ],
+  "coverage": [
+    {
+      "date": "2026-08-31",
+      "contract": "70.0.0",
+      "games": 12,
+      "projected_total": false,
+      "ump_catcher_pen": false,
+      "lineups": false,
+      "mix_and_pitch_physics": true
+    },
+    {
+      "date": "2026-09-01",
+      "contract": "80.0.0",
+      "games": 15,
+      "projected_total": false,
+      "ump_catcher_pen": false,
+      "lineups": false,
+      "mix_and_pitch_physics": true
+    },
+    {
+      "date": "2026-09-02",
+      "contract": "80.0.0",
+      "games": 15,
+      "projected_total": false,
+      "ump_catcher_pen": false,
+      "lineups": true,
+      "mix_and_pitch_physics": true
+    },
+    {
+      "date": "2026-09-03",
+      "contract": "80.0.0",
+      "games": 9,
+      "projected_total": false,
+      "ump_catcher_pen": false,
+      "lineups": true,
+      "mix_and_pitch_physics": true
+    },
+    {
+      "date": "2026-09-04",
+      "contract": "80.0.0",
+      "games": 16,
+      "projected_total": false,
+      "ump_catcher_pen": false,
+      "lineups": true,
+      "mix_and_pitch_physics": true
+    },
+    {
+      "date": "2026-09-05",
+      "contract": "80.0.0",
+      "games": 15,
+      "projected_total": false,
+      "ump_catcher_pen": false,
+      "lineups": true,
+      "mix_and_pitch_physics": true
+    },
+    {
+      "date": "2026-09-06",
+      "contract": null,
+      "games": 0,
+      "status": "no_run",
+      "projected_total": false,
+      "ump_catcher_pen": false,
+      "lineups": false,
+      "mix_and_pitch_physics": false
+    },
+    {
+      "date": "2026-09-07",
+      "contract": "80.0.0",
+      "games": 11,
+      "projected_total": false,
+      "ump_catcher_pen": false,
+      "lineups": true,
+      "mix_and_pitch_physics": true
+    },
+    {
+      "date": "2026-09-08",
+      "contract": "90.0.0",
+      "games": 15,
+      "projected_total": true,
+      "ump_catcher_pen": true,
+      "lineups": true,
+      "mix_and_pitch_physics": true
+    },
+    {
+      "date": "2026-09-09",
+      "contract": "90.0.0",
+      "games": 15,
+      "projected_total": true,
+      "ump_catcher_pen": true,
+      "lineups": true,
+      "mix_and_pitch_physics": true
+    }
+  ],
+  "constants": [
+    {
+      "symbol": "C_D",
+      "value": 0.35,
+      "unit": null,
+      "why": "Adair 2002; Nathan 2008 TrackMan. Turbulent sphere at pitch Re."
+    },
+    {
+      "symbol": "C_L",
+      "value": 0.22,
+      "unit": null,
+      "why": "Nathan 2008 C_L vs spin-ratio, mid MLB S ~ 0.20. Documentation only — Statcast pfx already is measured Magnus."
+    },
+    {
+      "symbol": "A",
+      "value": 0.004218,
+      "unit": "m^2",
+      "why": "pi * (0.0366 m)^2. OBR 3.01 / Nathan radius."
+    },
+    {
+      "symbol": "m",
+      "value": 0.145,
+      "unit": "kg",
+      "why": "OBR 3.01 midpoint."
+    },
+    {
+      "symbol": "L",
+      "value": 18.44,
+      "unit": "m",
+      "why": "60 ft 6 in, OBR 2.01."
+    },
+    {
+      "symbol": "k",
+      "value": 0.00509,
+      "unit": "m^2/kg",
+      "expression": "C_D * A / (2 * m)",
+      "why": "Drag ODE coefficient."
+    },
+    {
+      "symbol": "R_d",
+      "value": 287.05,
+      "unit": "J/(kg*K)",
+      "why": "Dry air."
+    },
+    {
+      "symbol": "R_v",
+      "value": 461.495,
+      "unit": "J/(kg*K)",
+      "why": "Water vapor."
+    },
+    {
+      "symbol": "RHO_REF",
+      "value": 1.2041,
+      "unit": "kg/m^3",
+      "why": "ISA 20 C sea-level lab. Used for IF-hit fly-ball carry and Stage 1 CSV only. Dashboard pitcher scores use live rho_ref."
+    },
+    {
+      "symbol": "D_ref",
+      "value": 400.0,
+      "unit": "ft",
+      "why": "Nathan fly-ball reference. Not a pitcher score."
+    },
+    {
+      "symbol": "v_ball",
+      "value": 44.704,
+      "unit": "m/s",
+      "why": "100 mph. Mean well-struck fly for IF-hit wind-carry expansion."
+    },
+    {
+      "symbol": "F_loss",
+      "value": 0.095,
+      "unit": null,
+      "why": "Empirical rubber-to-plate fractional speed loss (~95 to ~86 mph)."
+    }
+  ],
+  "chosen_scales": {
+    "kind": "chosen_physics_scales",
+    "not": "fitted intercept / ridge / sample mean / z-score",
+    "mix_ra9_per_net": -0.55,
+    "carry_ft_per_hr9": 55.0,
+    "hr_run_value": 1.45,
+    "rain_carry_efold_mm": 4.0,
+    "starter_ip_default": 5.4,
+    "ip_start_clip_min": 4.0,
+    "ip_start_clip_max": 7.0,
+    "ip_start_if_il_or_out": 3.0,
+    "ip_start_if_dtd": 4.2,
+    "bullpen_ra9_no_identity": 4.5,
+    "era_if_unpublished": 4.5,
+    "fb_pct_default": 36.0,
+    "rain_contact_ra9_per_mm": -0.15,
+    "rain_contact_ra9_floor": -2.5,
+    "gust_cmd_k": 0.02,
+    "gust_spread_k": 0.07,
+    "ops_ref": 0.72,
+    "ops_scale": 0.08,
+    "lineup_ops_ra9": 0.55,
+    "see_the_mix_k": 0.4,
+    "umpire_overlay_k": 0.45,
+    "umpire_slate_mean_fallback_rg": 8.7,
+    "framing_pitches_per_ra9": 150.0,
+    "framing_weight_starter": 1.0,
+    "framing_weight_pen": 0.5,
+    "w_home_tau_days": 7.0,
+    "rho_recent_tau_days": 3.0,
+    "acclim_tau0_days": 1.5,
+    "acclim_delta_h_m": 800.0,
+    "circadian_east_d_per_h": 1.5,
+    "circadian_west_d_per_h": 0.75,
+    "command_circadian_k": -0.15,
+    "command_region_k": -0.8,
+    "command_travel_k": -0.4,
+    "tanh_break_in": 1.6,
+    "tanh_break_out": 2.8,
+    "tanh_speed_in": 1.8,
+    "tanh_speed_out": 1.1,
+    "pitch_net_display_clamp": 8.0,
+    "arsenal_last30_weight": 0.65,
+    "arsenal_season_weight": 0.35,
+    "note": "Projected total is constructed from THIS game. These numbers are chosen conversion scales (same class as tanh 1.6 / rain 0.55), not a fit to last week's 9.11 mean. No intercept. No z-clip. A tornado or Coors night is allowed to print 18-22. A rain-dead night can print 4-5."
+  },
+  "formulas": [
+    {
+      "id": "e_sat",
+      "group": "air",
+      "name": "Saturation vapor pressure (August-Roche-Magnus)",
+      "expression": "e_sat(T) = 610.94 * exp(17.625 * T / (T + 243.04))",
+      "unit": "Pa",
+      "status": "physics",
+      "display_only": false,
+      "notes": "T in Celsius. Open-Meteo hour nearest first pitch."
+    },
+    {
+      "id": "vapor_pressure",
+      "group": "air",
+      "name": "Vapor pressure",
+      "expression": "e = (RH/100) * e_sat(T)",
+      "unit": "Pa",
+      "status": "physics",
+      "display_only": false
+    },
+    {
+      "id": "moist_density",
+      "group": "air",
+      "name": "Moist density (ideal-gas mixture)",
+      "expression": "rho = (p - e) / (R_d * T_K) + e / (R_v * T_K)",
+      "unit": "kg/m^3",
+      "status": "physics",
+      "display_only": false,
+      "notes": "This rho multiplies drag and Magnus. It is not elevation. Two parks at the same elevation on different nights are not the same air. Enclosed/roof-closed: external wind, gusts, rain = 0."
+    },
+    {
+      "id": "wind_to_bearing",
+      "group": "air",
+      "name": "Wind TO bearing",
+      "expression": "TO = (FROM + 180) mod 360",
+      "unit": "deg",
+      "status": "geometry",
+      "display_only": false
+    },
+    {
+      "id": "wind_rel_to_cf",
+      "group": "air",
+      "name": "Park-axis wind relative to CF",
+      "expression": "rel = (TO - home_plate_bearing) mod 360",
+      "unit": "deg",
+      "status": "geometry",
+      "display_only": false
+    },
+    {
+      "id": "v_out_to_cf",
+      "group": "air",
+      "name": "Out-to-CF wind component",
+      "expression": "v_out_to_CF = |v| * cos(rel)   # >0 toward CF",
+      "unit": "km/h",
+      "status": "geometry",
+      "display_only": false
+    },
+    {
+      "id": "v_cross",
+      "group": "air",
+      "name": "Crosswind toward RF",
+      "expression": "v_cross = |v| * sin(rel)   # >0 toward RF",
+      "unit": "km/h",
+      "status": "geometry",
+      "display_only": false
+    },
+    {
+      "id": "arsenal_blend",
+      "group": "arsenal",
+      "name": "Arsenal window blend",
+      "expression": "metric = 0.65 * last_30_days + 0.35 * season   (whichever window exists if only one)",
+      "unit": null,
+      "status": "chosen",
+      "display_only": false,
+      "coefficients": {
+        "last30": 0.65,
+        "season": 0.35
+      }
+    },
+    {
+      "id": "active_spin",
+      "group": "arsenal",
+      "name": "Active spin source",
+      "expression": "player-page spinAxis this season, else that pitcher's latest published season on the same page",
+      "unit": "pct",
+      "status": "physics",
+      "display_only": false,
+      "notes": "Savant Active Spin leaderboard is forbidden. Unpublished spin is unlabeled — never invented as 65%. Gyro sliders are supposed to be low."
+    },
+    {
+      "id": "projected_pfx",
+      "group": "stage1",
+      "name": "Magnus proportional to rho (Stage 1 CSV vs ISA)",
+      "expression": "projected_pfx = pfx * (rho_game / RHO_REF)",
+      "unit": "ft",
+      "status": "physics",
+      "display_only": false,
+      "notes": "Stage 1 CSV is lab-relative. Dashboard scores are restamped in Stage 2 vs live rho_ref."
+    },
+    {
+      "id": "delta_pfx_inches",
+      "group": "stage1",
+      "name": "Break delta inches",
+      "expression": "delta_pfx_in = (projected_pfx - pfx) * 12",
+      "unit": "in",
+      "status": "physics",
+      "display_only": false
+    },
+    {
+      "id": "v_plate",
+      "group": "stage1",
+      "name": "Plate speed 1-D drag ODE",
+      "expression": "v_plate(rho) = v_release / (1 + k * rho * L * v_release)",
+      "unit": "m/s",
+      "status": "physics",
+      "display_only": false
+    },
+    {
+      "id": "delta_v_plate",
+      "group": "stage1",
+      "name": "Plate-speed delta",
+      "expression": "delta_v_mph = v_plate(rho_game) - v_plate(rho_ref)",
+      "unit": "mph",
+      "status": "physics",
+      "display_only": false
+    },
+    {
+      "id": "crosswind_drift",
+      "group": "stage1",
+      "name": "Crosswind location drift",
+      "expression": "t = L / v_avg; a_cross = k * rho * v_avg * v_cross; drift = 0.5 * a_cross * t^2",
+      "unit": "in",
+      "status": "physics",
+      "display_only": false,
+      "notes": "F_lat proportional to rho * v_pitch * v_cross."
+    },
+    {
+      "id": "wind_magnus_scale",
+      "group": "stage1",
+      "name": "Wind Magnus scale (pitch headwind / tailwind)",
+      "expression": "v_rel = v_pitch + v_out_to_CF; scale = (v_rel / v_pitch)^2",
+      "unit": null,
+      "status": "physics",
+      "display_only": false,
+      "notes": "Out-to-CF is a pitch headwind."
+    },
+    {
+      "id": "carry_density",
+      "group": "carry",
+      "name": "IF-hit density carry",
+      "expression": "delta_d_density = 400 * (RHO_REF / rho - 1)",
+      "unit": "ft",
+      "status": "physics",
+      "display_only": false,
+      "notes": "Not a pitcher score. If there are no hits this is zero in the game that actually happened."
+    },
+    {
+      "id": "carry_wind",
+      "group": "carry",
+      "name": "IF-hit wind carry",
+      "expression": "delta_d_wind = 400 * 2 * (v_out / 44.704) * 0.095 * (rho / RHO_REF)",
+      "unit": "ft",
+      "status": "physics",
+      "display_only": false
+    },
+    {
+      "id": "carry_net",
+      "group": "carry",
+      "name": "IF-hit net carry",
+      "expression": "delta_d_net = delta_d_density + delta_d_wind   [+ small enclosed-branch term]",
+      "unit": "ft",
+      "status": "physics",
+      "display_only": false
+    },
+    {
+      "id": "rho_home",
+      "group": "live_rho_ref",
+      "name": "Franchise-home ISA density",
+      "expression": "rho_home = rho_ISA(franchise home elevation)",
+      "unit": "kg/m^3",
+      "status": "physics",
+      "display_only": false
+    },
+    {
+      "id": "rho_site",
+      "group": "live_rho_ref",
+      "name": "Tonight venue ISA density",
+      "expression": "rho_site = rho_ISA(tonight venue elevation)",
+      "unit": "kg/m^3",
+      "status": "physics",
+      "display_only": false
+    },
+    {
+      "id": "rho_recent",
+      "group": "live_rho_ref",
+      "name": "Recent occupancy-weighted moist density",
+      "expression": "rho_recent = occupancy-weighted true moist density of last 7 days; weight(d) = exp(-d / 3)",
+      "unit": "kg/m^3",
+      "status": "chosen",
+      "display_only": false,
+      "notes": "rho_recent is Open-Meteo first-pitch air, not ISA-at-elevation.",
+      "coefficients": {
+        "tau_days": 3.0
+      }
+    },
+    {
+      "id": "w_home",
+      "group": "live_rho_ref",
+      "name": "Home-air memory",
+      "expression": "w_home = exp(-days_since_home / 7)",
+      "unit": null,
+      "status": "chosen",
+      "display_only": false,
+      "notes": "days_since_home uses a 10-day window. Home SIDE != home AIR. A club can be the home side with w_home ~ 0.24 after a long road trip.",
+      "coefficients": {
+        "tau_days": 7.0
+      }
+    },
+    {
+      "id": "rho_prior",
+      "group": "live_rho_ref",
+      "name": "Prior density before tonight's acclimation",
+      "expression": "rho_prior = w_home * rho_home + (1 - w_home) * rho_recent",
+      "unit": "kg/m^3",
+      "status": "physics",
+      "display_only": false
+    },
+    {
+      "id": "acclim_tau",
+      "group": "live_rho_ref",
+      "name": "Acclimation time constant",
+      "expression": "tau = 1.5 + 1.0 * (1 - exp(-|elev_tonight - elev_last_game| / 800))",
+      "unit": "days",
+      "status": "chosen",
+      "display_only": false
+    },
+    {
+      "id": "acclim",
+      "group": "live_rho_ref",
+      "name": "Acclimation fraction",
+      "expression": "acclim = 1 - exp(-(days_at_this_park - 1) / tau)",
+      "unit": null,
+      "status": "chosen",
+      "display_only": false
+    },
+    {
+      "id": "rho_ref",
+      "group": "live_rho_ref",
+      "name": "Live pitcher air baseline",
+      "expression": "rho_ref = (1 - acclim) * rho_prior + acclim * rho_site",
+      "unit": "kg/m^3",
+      "status": "physics",
+      "display_only": false,
+      "notes": "Same rho_game for both starters. Different rho_ref."
+    },
+    {
+      "id": "rho_ratio",
+      "group": "live_rho_ref",
+      "name": "Tonight vs this pitcher's baseline",
+      "expression": "ratio = rho_game / rho_ref",
+      "unit": null,
+      "status": "physics",
+      "display_only": false
+    },
+    {
+      "id": "tz_shift",
+      "group": "circadian",
+      "name": "Timezone shift on current streak",
+      "expression": "tz_shift = UTC_offset(tonight) - UTC_offset(origin of this TZ streak)",
+      "unit": "h",
+      "status": "physics",
+      "display_only": false,
+      "notes": "Tracked against the current timezone streak, not last night's park."
+    },
+    {
+      "id": "unrecovered_h",
+      "group": "circadian",
+      "name": "Unrecovered body-clock hours",
+      "expression": "rec_per_hour = 1.5 if eastward else 0.75; unrecovered_h = max(0, hours_jumped - elapsed/rec_per_hour)",
+      "unit": "h",
+      "status": "chosen",
+      "display_only": false
+    },
+    {
+      "id": "circadian_load",
+      "group": "circadian",
+      "name": "Circadian load",
+      "expression": "circadian_load = unrecovered_h * dir_w + early_first_pitch_term",
+      "unit": null,
+      "status": "chosen",
+      "display_only": false
+    },
+    {
+      "id": "command_circadian",
+      "group": "circadian",
+      "name": "Command from circadian",
+      "expression": "command_circadian = -0.15 * circadian_load",
+      "unit": null,
+      "status": "chosen",
+      "display_only": false,
+      "notes": "THIS pitcher's play/ability."
+    },
+    {
+      "id": "command_region",
+      "group": "circadian",
+      "name": "Command from region churn",
+      "expression": "command_region = -0.80 * region_churn",
+      "unit": null,
+      "status": "chosen",
+      "display_only": false
+    },
+    {
+      "id": "command_road",
+      "group": "circadian",
+      "name": "Command from road/travel fatigue",
+      "expression": "command_road = -road_fatigue - 0.40 * travel_fatigue",
+      "unit": null,
+      "status": "chosen",
+      "display_only": false
+    },
+    {
+      "id": "pickup",
+      "group": "circadian",
+      "name": "Opposing-lineup pickup (pitcher benefit if they cannot pick it up)",
+      "expression": "pickup = tanh(opp_hitter_pickup_impairment * (0.70*velo_frac + 0.30*rpm_frac) * (1.10 if offspeed else 1) / 1.4) * 1.6",
+      "unit": null,
+      "status": "chosen",
+      "display_only": false,
+      "notes": "Other club's 16-day east-west path and body-clock hour, coupled to this pitch. Not this pitcher's air."
+    },
+    {
+      "id": "spin_frac",
+      "group": "mix",
+      "name": "Spin fraction",
+      "expression": "spin_frac = active_spin_pct / 100",
+      "unit": null,
+      "status": "physics",
+      "display_only": false
+    },
+    {
+      "id": "velo_frac",
+      "group": "mix",
+      "name": "Velo fraction",
+      "expression": "velo_frac = release_speed / 95",
+      "unit": null,
+      "status": "physics",
+      "display_only": false
+    },
+    {
+      "id": "rpm_frac",
+      "group": "mix",
+      "name": "RPM fraction",
+      "expression": "rpm_frac = release_spin_rate / 2200",
+      "unit": null,
+      "status": "physics",
+      "display_only": false
+    },
+    {
+      "id": "hang",
+      "group": "mix",
+      "name": "Hang time proxy",
+      "expression": "hang = 95 / release_speed",
+      "unit": null,
+      "status": "physics",
+      "display_only": false
+    },
+    {
+      "id": "dz_signed",
+      "group": "mix",
+      "name": "Signed vertical-break delta",
+      "expression": "dz_signed = +delta_pfx_z_vs_ref if rise pitch (4-seam, cutter) else -delta_pfx_z_vs_ref",
+      "unit": "in",
+      "status": "physics",
+      "display_only": false,
+      "notes": "More of the intended vertical break is pitcher help."
+    },
+    {
+      "id": "break",
+      "group": "mix",
+      "name": "Break component",
+      "expression": "break = tanh((dz_signed * spin_frac * velo_frac * rpm_frac) / 1.6) * 2.8 - rain_mm * spin_frac * rpm_frac * velo_frac * 0.55",
+      "unit": null,
+      "status": "chosen",
+      "display_only": false,
+      "notes": "tanh compressors are display-class; they preserve sign.",
+      "coefficients": {
+        "tanh_in": 1.6,
+        "tanh_out": 2.8,
+        "rain_k": 0.55
+      }
+    },
+    {
+      "id": "speed",
+      "group": "mix",
+      "name": "Speed component",
+      "expression": "speed = tanh(delta_v_plate_vs_ref / 1.8) * 1.1 - circadian_load * 0.08 * velo_frac - rain_mm * 0.08 * velo_frac",
+      "unit": null,
+      "status": "chosen",
+      "display_only": false,
+      "coefficients": {
+        "tanh_in": 1.8,
+        "tanh_out": 1.1,
+        "circadian_k": 0.08,
+        "rain_k": 0.08
+      }
+    },
+    {
+      "id": "rain_cmd",
+      "group": "mix",
+      "name": "Rain command",
+      "expression": "rain_cmd = -rain_mm * hang * (0.20 + 0.40*(1 if offspeed else 0.20) + 0.25*spin_frac)",
+      "unit": null,
+      "status": "chosen",
+      "display_only": false
+    },
+    {
+      "id": "gust_cmd",
+      "group": "mix",
+      "name": "Gust command",
+      "expression": "gust_cmd = -(0.02*gusts_mph + 0.07*(gusts - mean_wind)) * hang * (0.65 + 0.35*spin_frac)",
+      "unit": null,
+      "status": "chosen",
+      "display_only": false
+    },
+    {
+      "id": "circ_cmd",
+      "group": "mix",
+      "name": "Circadian command on this pitch",
+      "expression": "circ_cmd = command_circadian * (1.20 if offspeed else 0.85)",
+      "unit": null,
+      "status": "chosen",
+      "display_only": false
+    },
+    {
+      "id": "command",
+      "group": "mix",
+      "name": "Command component",
+      "expression": "command = -abs(wind_drift_x) * 0.8 * hang - abs(delta_pfx_x) * 0.08 + circ_cmd + command_region + command_road + rain_cmd + gust_cmd",
+      "unit": null,
+      "status": "chosen",
+      "display_only": false
+    },
+    {
+      "id": "pitch_net",
+      "group": "mix",
+      "name": "Per-pitch net environmental impact (DISPLAY)",
+      "expression": "pitch_net = clamp(break + speed + command + pickup, -8, +8)",
+      "unit": null,
+      "status": "chosen",
+      "display_only": true,
+      "notes": "Positive = pitcher help. No 0.1 dead-zone. Pitch Out excluded from the mix. Carry is NOT in this number."
+    },
+    {
+      "id": "unclamped_mix",
+      "group": "mix",
+      "name": "Unclamped mix (RUN PROJECTION)",
+      "expression": "unclamped = break + speed + command + pickup",
+      "unit": null,
+      "status": "physics",
+      "display_only": false,
+      "notes": "Not the +/-8 display clamp. Tornado command can exceed -8."
+    },
+    {
+      "id": "pitcher_net",
+      "group": "mix",
+      "name": "Pitcher overall net env impact for that mix in that park",
+      "expression": "pitcher_net = sum(pitch_net * usage_pct) / sum(usage_pct)",
+      "unit": null,
+      "status": "physics",
+      "display_only": false,
+      "notes": "Usage-weighted mean of DISPLAY-clamped pitch nets. INPUT to the card, not overwritten by the run projection."
+    },
+    {
+      "id": "lineup_ra9",
+      "group": "lineup",
+      "name": "This 9 vs this pitcher's hand",
+      "expression": "lineup_RA9 = ((OPS_vs_this_hand - 0.720) / 0.080) * 0.55 + 0.40 * (0.5 - same_side_frac) - hide(4S_pct * velo/95, break_pct * same_side)",
+      "unit": "RA9",
+      "status": "chosen",
+      "display_only": false,
+      "notes": "CONFIRMED beats EXPECTED. Switch-hitters take the opposite hand. IL/Out in the top 5 taxes -0.22; DTD -0.08. Dropped from OPS mean if >=6 remain."
+    },
+    {
+      "id": "bullpen_ra9",
+      "group": "bullpen",
+      "name": "This team's remainder-IP RA9",
+      "expression": "this_team_bullpen_RA9 = IP-weighted RP ERA + 0.22*RP_on_IL (cap 0.90) + 0.35 if closer IL + fatigue",
+      "unit": "RA9",
+      "status": "chosen",
+      "display_only": false,
+      "notes": "RP filter: GS/G < 0.4, or GS <= 3 and G >= 4; tonight's starter excluded; IP >= 3. Fatigue: yday RP IP >= 3.5 -> +0.35; 3d >= 7 -> +0.30; closer pitched yesterday -> +0.18. Unpublished bullpen -> 4.50 flagged bullpen_ra9_no_identity (unknown identity, not last week's 9.11 mean). Starter IL/Out clips IP_start to 3.0; DTD clips to 4.2."
+    },
+    {
+      "id": "catcher_framing_ra9",
+      "group": "catcher",
+      "name": "Catcher framing RA9",
+      "expression": "catcher_framing_RA9 = -Savant_rv_tot / (pitches / 150)",
+      "unit": "RA9",
+      "status": "chosen",
+      "display_only": false,
+      "notes": "Positive Savant rv_tot = extra strikes = pitcher help = negative RA9. Full weight on starter RA9; 1/2 on remainder IP. No sample -> 0, labeled no framing sample, not invented. URL: baseballsavant.mlb.com/leaderboard/catcher-framing?year=YYYY&min=1&csv=true"
+    },
+    {
+      "id": "umpire_runs",
+      "group": "umpire",
+      "name": "HP umpire overlay",
+      "expression": "umpire_runs = 0.45 * (HP_R_per_G - slate_mean_HP_R_per_G)",
+      "unit": "runs",
+      "status": "chosen",
+      "display_only": false,
+      "notes": "Zone overlay — does not replace the physics total. Covers crew table + per-matchup card. If HP is not posted and this is series G2+, yesterday's 1B is today's HP (next HP-day in the same crew table).",
+      "coefficients": {
+        "k": 0.45,
+        "fallback_mean_rg": 8.7
+      }
+    },
+    {
+      "id": "carry_eff",
+      "group": "projected_total",
+      "name": "Rain-damped IF-hit carry",
+      "expression": "carry_eff = carry_ft * exp(-rain_mm / 4)",
+      "unit": "ft",
+      "status": "chosen",
+      "display_only": false
+    },
+    {
+      "id": "carry_ra9",
+      "group": "projected_total",
+      "name": "IF-hit carry converted to RA9",
+      "expression": "carry_RA9 = (carry_eff / 55) * (FB_pct / 36) * 1.45",
+      "unit": "RA9",
+      "status": "chosen",
+      "display_only": false,
+      "notes": "IF-hit only. Mix does not add fly-ball feet."
+    },
+    {
+      "id": "ra9_starter",
+      "group": "projected_total",
+      "name": "Starter RA9 tonight",
+      "expression": "RA9_starter = ERA + (-0.55)*unclamped_mix + carry_RA9 + lineup_RA9 + catcher_framing_RA9",
+      "unit": "RA9",
+      "status": "chosen",
+      "display_only": false
+    },
+    {
+      "id": "starter_runs",
+      "group": "projected_total",
+      "name": "Starter runs allowed",
+      "expression": "starter_runs = RA9_starter * IP_start / 9",
+      "unit": "runs",
+      "status": "physics",
+      "display_only": false,
+      "notes": "IP_start from IP/GS clipped 4-7; IL/Out min 3.0; DTD min 4.2; default 5.4."
+    },
+    {
+      "id": "pitch_i_runs",
+      "group": "projected_total",
+      "name": "Per-pitch contribution to starter runs",
+      "expression": "pitch_i_runs = (-0.55) * (usage_i/100) * (break+speed+command+pickup)_i * (IP_start/9)",
+      "unit": "runs",
+      "status": "chosen",
+      "display_only": false
+    },
+    {
+      "id": "ra9_pen",
+      "group": "projected_total",
+      "name": "Remainder-IP RA9",
+      "expression": "RA9_pen = bullpen_RA9 + carry_RA9 + rain_contact + gust_proxy + 0.5*lineup_quality + 0.5*catcher_framing_RA9",
+      "unit": "RA9",
+      "status": "chosen",
+      "display_only": false
+    },
+    {
+      "id": "pen_runs",
+      "group": "projected_total",
+      "name": "Bullpen runs allowed",
+      "expression": "pen_runs = RA9_pen * (9 - IP_start) / 9",
+      "unit": "runs",
+      "status": "physics",
+      "display_only": false
+    },
+    {
+      "id": "side_runs",
+      "group": "projected_total",
+      "name": "One side's runs",
+      "expression": "side_runs = starter_runs + pen_runs",
+      "unit": "runs",
+      "status": "physics",
+      "display_only": false
+    },
+    {
+      "id": "projected_total",
+      "group": "projected_total",
+      "name": "Tonight's constructed game total",
+      "expression": "projected_total = away_side_runs + home_side_runs + umpire_runs",
+      "unit": "runs",
+      "status": "physics",
+      "display_only": false,
+      "notes": "Every run rebuilds this from this game. No 9.11 intercept. No z-score. Allowed to print 18-22 or 4-5."
+    },
+    {
+      "id": "arms_only_total",
+      "group": "projected_total",
+      "name": "Arms without tonight's physics",
+      "expression": "arms_only_total = away_ERA + home_ERA",
+      "unit": "runs",
+      "status": "physics",
+      "display_only": false
+    },
+    {
+      "id": "physics_delta",
+      "group": "projected_total",
+      "name": "Physics delta vs arms-only",
+      "expression": "physics_delta = projected_total - arms_only_total",
+      "unit": "runs",
+      "status": "physics",
+      "display_only": false,
+      "notes": "|delta| >= 1 -> PHYSICS_UP / PHYSICS_DOWN."
+    },
+    {
+      "id": "market_edge",
+      "group": "projected_total",
+      "name": "Market edge (display only)",
+      "expression": "market_edge = projected_total - DK_line",
+      "unit": "runs",
+      "status": "physics",
+      "display_only": true,
+      "notes": "DraftKings / ScoresAndOdds / Covers location and series # are ingested and displayed. They do not calibrate the physics number. Do not stamp OVER/UNDER lean %."
+    },
+    {
+      "id": "rain_contact_ra9",
+      "group": "projected_total",
+      "name": "Rain contact RA9 on remainder IP",
+      "expression": "rain_contact_RA9 = max(-2.5, -0.15 * rain_mm)",
+      "unit": "RA9",
+      "status": "chosen",
+      "display_only": false,
+      "notes": "Harder to square up in rain."
+    }
+  ],
+  "fields": [
+    {
+      "field": "projected_total",
+      "meaning": "Tonight's constructed game total from these arms + this air + this 9 + framing + HP overlay."
+    },
+    {
+      "field": "arms_only_total",
+      "meaning": "Away ERA + home ERA. What the arms do over 9 without tonight's physics."
+    },
+    {
+      "field": "physics_delta",
+      "meaning": "projected_total - arms_only_total. |delta| >= 1 -> PHYSICS_UP / PHYSICS_DOWN."
+    },
+    {
+      "field": "pitcher_net_env_score",
+      "meaning": "Usage-weighted mix in tonight's air (display-clamped +/-8). Carry is not in this number."
+    },
+    {
+      "field": "pitch_env_break",
+      "meaning": "Break piece of the mix on each pitch card."
+    },
+    {
+      "field": "pitch_env_speed",
+      "meaning": "Speed piece of the mix on each pitch card."
+    },
+    {
+      "field": "pitch_env_command",
+      "meaning": "Command piece of the mix on each pitch card."
+    },
+    {
+      "field": "pitch_env_pickup",
+      "meaning": "Opposing-lineup pickup piece. Unclamped sum of the four pieces feeds the run projection."
+    },
+    {
+      "field": "pitch_env_rain",
+      "meaning": "Rain coupling on that pitch (hang x spin x velo)."
+    },
+    {
+      "field": "pitch_env_gust",
+      "meaning": "Gust coupling on that pitch (hang x spin)."
+    },
+    {
+      "field": "delta_pfx_z_vs_ref_inches",
+      "meaning": "Vertical break tonight vs this pitcher's live rho_ref, inches."
+    },
+    {
+      "field": "delta_pfx_x_vs_ref_inches",
+      "meaning": "Horizontal break tonight vs live rho_ref, inches."
+    },
+    {
+      "field": "plate_speed_delta_vs_ref_mph",
+      "meaning": "Plate-arrival speed vs live rho_ref (drag ODE)."
+    },
+    {
+      "field": "wind_drift_x_inches",
+      "meaning": "Crosswind location shift over 60 ft 6 in."
+    },
+    {
+      "field": "active_spin_pct",
+      "meaning": "Player-page spinAxis only. Gyro sliders are supposed to be low."
+    },
+    {
+      "field": "rho_game",
+      "meaning": "Tonight's moist density at first pitch."
+    },
+    {
+      "field": "rho_ref",
+      "meaning": "This pitcher's live air baseline (schedule + acclimation)."
+    },
+    {
+      "field": "acclimation",
+      "meaning": "Altitude-jump acclimation fraction into tonight's site."
+    },
+    {
+      "field": "circadian_load",
+      "meaning": "Unrecovered body-clock hours plus early-first-pitch term."
+    },
+    {
+      "field": "tz_region_path",
+      "meaning": "16-day region hops."
+    },
+    {
+      "field": "recent_venues",
+      "meaning": "Last-week park path."
+    },
+    {
+      "field": "opp_hitter_pickup_impairment",
+      "meaning": "The other club's eyes — not this pitcher's air."
+    },
+    {
+      "field": "carry_ft",
+      "meaning": "IF-hit 400-ft delta. Footnote only."
+    },
+    {
+      "field": "carry_effective_ft",
+      "meaning": "carry_ft rain-damped. Footnote only."
+    },
+    {
+      "field": "umpire_runs",
+      "meaning": "0.45 * (HP R/G - slate mean). Covers card."
+    },
+    {
+      "field": "hp_rg",
+      "meaning": "Home-plate umpire runs per game from Covers."
+    },
+    {
+      "field": "catcher.ra9_help",
+      "meaning": "Savant extra-strike run value converted to RA9. Positive rv_tot helps the pitcher."
+    },
+    {
+      "field": "catcher.rv_tot",
+      "meaning": "Savant catcher-framing total run value."
+    },
+    {
+      "field": "market_total",
+      "meaning": "DraftKings line. Display only."
+    },
+    {
+      "field": "market_edge",
+      "meaning": "projected_total - DK line. Display only."
+    },
+    {
+      "field": "sao_rotation",
+      "meaning": "ScoresAndOdds rotation number."
+    },
+    {
+      "field": "open_total",
+      "meaning": "ScoresAndOdds opening total."
+    }
+  ],
+  "color_key": [
+    {
+      "color": "green",
+      "meaning": "Pitcher benefit. Faster plate arrival; more of the intended vertical break."
+    },
+    {
+      "color": "red",
+      "meaning": "Hitter benefit / pitch degraded. Slower arrival; less of the intended break."
+    },
+    {
+      "color": "blue",
+      "meaning": "Horizontal location shift (neutral — context-dependent)."
+    },
+    {
+      "color": "amber",
+      "meaning": "Significant lateral crosswind drift (> 0.3 in) — location-control risk."
+    }
+  ],
+  "physics_vs_chosen": [
+    {
+      "piece": "Moist rho from T, P, RH",
+      "status": "physics (ideal-gas mixture)"
+    },
+    {
+      "piece": "Magnus proportional to rho, drag ODE, F_M proportional to v_rel^2",
+      "status": "physics (Adair / Nathan)"
+    },
+    {
+      "piece": "Park-axis wind; pitch-headwind vs CF-tailwind",
+      "status": "geometry + physics"
+    },
+    {
+      "piece": "Live rho_ref from schedule path + acclimation",
+      "status": "right model; rho_recent is Open-Meteo first-pitch air"
+    },
+    {
+      "piece": "w_home = exp(-days_since_home/7)",
+      "status": "directed decay; 7-day scale is chosen"
+    },
+    {
+      "piece": "Circadian 1.5 / 0.75 d/h",
+      "status": "literature rates; coefficients onto the score are chosen"
+    },
+    {
+      "piece": "tanh compressors 1.6 / 2.8 / 1.8 / 1.1",
+      "status": "display only; preserve sign"
+    },
+    {
+      "piece": "Mix -> RA9 -0.55; carry 55 ft / HR; ump 0.45",
+      "status": "chosen conversion scales, not a slate fit"
+    },
+    {
+      "piece": "Fly-ball 400-ft delta_d",
+      "status": "physics of contact in the air; not a pitcher score"
+    }
+  ],
+  "rules": [
+    "Daily collect is the calendar date of the run (America/New_York). Dated leftover folders are receipts.",
+    "Spin = player-page spinAxis only. Never invent spin. Never use the Savant Active Spin leaderboard.",
+    "Scores must not be empirically fitted to one historical slate. Labels follow the physics number's sign.",
+    "Carry is IF-the-ball-is-hit only. Do not use 'home vs visitor at Coors.'",
+    "Always populate a confirmed or expected nine. CONFIRMED beats EXPECTED.",
+    "Do not stamp per-game OVER/UNDER lean %. Market line is displayed, not a calibrator.",
+    "No 9.11 sample-mean intercept. No z-score toward last week. Projections can print 18-22 or 4-5.",
+    "V80/V84 remain on disk for forensics. Live product is V90."
+  ],
+  "limitations": [
+    {
+      "issue": "Stage 1 CSV vs ISA",
+      "status": "Lab-relative. Dashboard scores use live rho_ref. Do not audit pitcher meaning from Stage 1 CSV alone."
+    },
+    {
+      "issue": "FanGraphs WAR HTTP 403",
+      "status": "External. n/a. Not used in env scores."
+    },
+    {
+      "issue": "Roof quorum",
+      "status": "Retractable nights can still take the wrong branch if sources disagree."
+    },
+    {
+      "issue": "Statcast pfx mixed-park",
+      "status": "Baseline break includes parks they actually threw in. Direction is tonight vs live rho_ref."
+    },
+    {
+      "issue": "4-seam help vs launching pad",
+      "status": "Pitch-headwind ride can score green while the same wind is IF-hit carry. Mix does not add fly-ball feet."
+    },
+    {
+      "issue": "tanh / rain / gust coefficients",
+      "status": "Not ODE-derived. Sign and ordering are the claim."
+    }
+  ],
+  "closing": "V90 — the pitcher number is this mix in this first-pitch air. Carry is not that number. The projected total is these arms plus that physics, this 9, this C, this HP, and this pen, for this game."
+}
