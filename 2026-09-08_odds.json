@@ -1,0 +1,1653 @@
+{
+  "kind": "pregame_odds_day",
+  "contract_version": "90.0.0",
+  "book": "DraftKings",
+  "source": "ESPN core odds API, provider id 100 (DraftKings). Scoreboard events for the MLB calendar date, then /events/{id}/competitions/{id}/odds.",
+  "fetched_utc": "2026-09-10T18:25:02Z",
+  "date": "2026-09-08",
+  "snapshot_run": "2026-09-08_20260908T172613Z",
+  "snapshot_games": 15,
+  "espn_events": 15,
+  "n_with_odds": 15,
+  "n_matched_to_snapshot": 15,
+  "games": [
+    {
+      "date": "2026-09-08",
+      "game_pk": 824792,
+      "espn_event_id": "401816854",
+      "away_team": "Cleveland Guardians",
+      "home_team": "Baltimore Orioles",
+      "away_abbr": "CLE",
+      "home_abbr": "BAL",
+      "short_name": "CLE @ BAL",
+      "venue": "Oriole Park at Camden Yards",
+      "game_datetime_utc": "2026-09-08T22:35:00Z",
+      "game_datetime_est": "2026-09-08 06:35 PM EDT",
+      "status": "Final",
+      "completed": true,
+      "score_away": 9.0,
+      "score_home": 5.0,
+      "away_record": "74-72",
+      "home_record": "70-76",
+      "away_probable": {
+        "name": "Tanner Bibee",
+        "record": "(5-15, 4.22)",
+        "era": 4.22
+      },
+      "home_probable": {
+        "name": "Brandon Young",
+        "record": "(9-4, 3.71)",
+        "era": 3.71
+      },
+      "matched_to_snapshot": true,
+      "snapshot_pitchers": [
+        {
+          "side": "away",
+          "pitcher_id": 676440,
+          "pitcher_name": "Tanner Bibee",
+          "team": "Cleveland Guardians"
+        },
+        {
+          "side": "home",
+          "pitcher_id": 687064,
+          "pitcher_name": "Brandon Young",
+          "team": "Baltimore Orioles"
+        }
+      ],
+      "snapshot_market_at_run": {
+        "market_book": "DraftKings",
+        "market_total": 8.0,
+        "market_over_odds": "-104",
+        "market_under_odds": "-116",
+        "market_ml_away": "+104",
+        "market_ml_home": "-125",
+        "market_edge": 2.56,
+        "open_total": 8.5,
+        "sao_rotation_away": "911",
+        "sao_rotation_home": "912",
+        "sao_open_total": 8.5,
+        "away_record": "73-72",
+        "home_record": "70-75",
+        "broadcasts": [
+          "MLB.TV",
+          "CLEGuardians.TV",
+          "MASN"
+        ],
+        "sao": {
+          "rotation_away": "911",
+          "rotation_home": "912",
+          "away_slug": "guardians",
+          "home_slug": "orioles",
+          "ml_away": "+104",
+          "ml_home": "-125",
+          "total": 8.0,
+          "open_total": 8.5,
+          "total_odds_over": "-104",
+          "total_odds_under": "-116",
+          "runline_away": "+1.5",
+          "runline_home": "-1.5",
+          "source": "scoresandodds"
+        }
+      },
+      "odds": {
+        "book": "DraftKings",
+        "book_provider_id": "100",
+        "favorite_detail": "BAL -125",
+        "open": {
+          "total": 8.5,
+          "over_odds": -117,
+          "under_odds": -103,
+          "ml_away": 100,
+          "ml_home": -120,
+          "runline_away": 1.5,
+          "runline_away_odds": -194,
+          "runline_home": -1.5,
+          "runline_home_odds": 159
+        },
+        "close": {
+          "total": 8.0,
+          "over_odds": -104,
+          "under_odds": -116,
+          "ml_away": 104,
+          "ml_home": -125,
+          "runline_away": 1.5,
+          "runline_away_odds": -211,
+          "runline_home": -1.5,
+          "runline_home_odds": 173
+        },
+        "close_ml_away": 104,
+        "close_ml_home": -125,
+        "close_spread_home": -1.5
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "game_pk": 823414,
+      "espn_event_id": "401816856",
+      "away_team": "Houston Astros",
+      "home_team": "Philadelphia Phillies",
+      "away_abbr": "HOU",
+      "home_abbr": "PHI",
+      "short_name": "HOU @ PHI",
+      "venue": "Citizens Bank Park",
+      "game_datetime_utc": "2026-09-08T22:40:00Z",
+      "game_datetime_est": "2026-09-08 06:40 PM EDT",
+      "status": "Final",
+      "completed": true,
+      "score_away": 6.0,
+      "score_home": 5.0,
+      "away_record": "74-71",
+      "home_record": "81-64",
+      "away_probable": {
+        "name": "Hayden Wesneski",
+        "record": "(5-1, 3.35)",
+        "era": 3.35
+      },
+      "home_probable": {
+        "name": "Andrew Painter",
+        "record": "(3-9, 5.71)",
+        "era": 5.71
+      },
+      "matched_to_snapshot": true,
+      "snapshot_pitchers": [
+        {
+          "side": "away",
+          "pitcher_id": 669713,
+          "pitcher_name": "Hayden Wesneski",
+          "team": "Houston Astros"
+        },
+        {
+          "side": "home",
+          "pitcher_id": 691725,
+          "pitcher_name": "Andrew Painter",
+          "team": "Philadelphia Phillies"
+        }
+      ],
+      "snapshot_market_at_run": {
+        "market_book": "DraftKings",
+        "market_total": 8.5,
+        "market_over_odds": "-119",
+        "market_under_odds": "-101",
+        "market_ml_away": "+114",
+        "market_ml_home": "-137",
+        "market_edge": 3.54,
+        "open_total": 8.5,
+        "sao_rotation_away": "921",
+        "sao_rotation_home": "922",
+        "sao_open_total": 8.5,
+        "away_record": "73-71",
+        "home_record": "81-63",
+        "broadcasts": [
+          "MLB.TV",
+          "TBS",
+          "NBC Sports Phil",
+          "Space City Home Network"
+        ],
+        "sao": {
+          "rotation_away": "921",
+          "rotation_home": "922",
+          "away_slug": "astros",
+          "home_slug": "phillies",
+          "ml_away": "+114",
+          "ml_home": "-137",
+          "total": 8.5,
+          "open_total": 8.5,
+          "total_odds_over": "-119",
+          "total_odds_under": "-101",
+          "runline_away": "+1.5",
+          "runline_home": "-1.5",
+          "source": "scoresandodds"
+        }
+      },
+      "odds": {
+        "book": "DraftKings",
+        "book_provider_id": "100",
+        "favorite_detail": "PHI -135",
+        "open": {
+          "total": 8.5,
+          "over_odds": -108,
+          "under_odds": -112,
+          "ml_away": 129,
+          "ml_home": -156,
+          "runline_away": 1.5,
+          "runline_away_odds": -171,
+          "runline_home": -1.5,
+          "runline_home_odds": 141
+        },
+        "close": {
+          "total": 8.5,
+          "over_odds": -120,
+          "under_odds": 100,
+          "ml_away": 112,
+          "ml_home": -135,
+          "runline_away": 1.5,
+          "runline_away_odds": -175,
+          "runline_home": -1.5,
+          "runline_home_odds": 144
+        },
+        "close_ml_away": 112,
+        "close_ml_home": -135,
+        "close_spread_home": -1.5
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "game_pk": 824228,
+      "espn_event_id": "401816857",
+      "away_team": "Minnesota Twins",
+      "home_team": "Detroit Tigers",
+      "away_abbr": "MIN",
+      "home_abbr": "DET",
+      "short_name": "MIN @ DET",
+      "venue": "Comerica Park",
+      "game_datetime_utc": "2026-09-08T22:40:00Z",
+      "game_datetime_est": "2026-09-08 06:40 PM EDT",
+      "status": "Final",
+      "completed": true,
+      "score_away": 3.0,
+      "score_home": 2.0,
+      "away_record": "69-76",
+      "home_record": "66-79",
+      "away_probable": {
+        "name": "Dean Kremer",
+        "record": "(3-5, 5.65)",
+        "era": 5.65
+      },
+      "home_probable": {
+        "name": "Drew Anderson",
+        "record": "(4-6, 3.80)",
+        "era": 3.8
+      },
+      "matched_to_snapshot": true,
+      "snapshot_pitchers": [
+        {
+          "side": "away",
+          "pitcher_id": 665152,
+          "pitcher_name": "Dean Kremer",
+          "team": "Minnesota Twins"
+        },
+        {
+          "side": "home",
+          "pitcher_id": 623454,
+          "pitcher_name": "Drew Anderson",
+          "team": "Detroit Tigers"
+        }
+      ],
+      "snapshot_market_at_run": {
+        "market_book": "DraftKings",
+        "market_total": 8.5,
+        "market_over_odds": "-108",
+        "market_under_odds": "-112",
+        "market_ml_away": "+113",
+        "market_ml_home": "-136",
+        "market_edge": 5.65,
+        "open_total": 8.5,
+        "sao_rotation_away": "913",
+        "sao_rotation_home": "914",
+        "sao_open_total": 8.5,
+        "away_record": "68-76",
+        "home_record": "66-78",
+        "broadcasts": [
+          "MLB.TV",
+          "Twins.TV",
+          "Tigers.TV"
+        ],
+        "sao": {
+          "rotation_away": "913",
+          "rotation_home": "914",
+          "away_slug": "twins",
+          "home_slug": "tigers",
+          "ml_away": "+113",
+          "ml_home": "-136",
+          "total": 8.5,
+          "open_total": 8.5,
+          "total_odds_over": "-108",
+          "total_odds_under": "-112",
+          "runline_away": "+1.5",
+          "runline_home": "-1.5",
+          "source": "scoresandodds"
+        }
+      },
+      "odds": {
+        "book": "DraftKings",
+        "book_provider_id": "100",
+        "favorite_detail": "DET -136",
+        "open": {
+          "total": 8.5,
+          "over_odds": -105,
+          "under_odds": -115,
+          "ml_away": 107,
+          "ml_home": -129,
+          "runline_away": 1.5,
+          "runline_away_odds": -175,
+          "runline_home": -1.5,
+          "runline_home_odds": 144
+        },
+        "close": {
+          "total": 8.5,
+          "over_odds": -105,
+          "under_odds": -115,
+          "ml_away": 113,
+          "ml_home": -136,
+          "runline_away": 1.5,
+          "runline_away_odds": -186,
+          "runline_home": -1.5,
+          "runline_home_odds": 153
+        },
+        "close_ml_away": 113,
+        "close_ml_home": -136,
+        "close_spread_home": -1.5
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "game_pk": 823821,
+      "espn_event_id": "401816858",
+      "away_team": "New York Mets",
+      "home_team": "Miami Marlins",
+      "away_abbr": "NYM",
+      "home_abbr": "MIA",
+      "short_name": "NYM @ MIA",
+      "venue": "loanDepot park",
+      "game_datetime_utc": "2026-09-08T22:40:00Z",
+      "game_datetime_est": "2026-09-08 06:40 PM EDT",
+      "status": "Final",
+      "completed": true,
+      "score_away": 7.0,
+      "score_home": 5.0,
+      "away_record": "67-78",
+      "home_record": "72-74",
+      "away_probable": {
+        "name": "Sean Manaea",
+        "record": "(5-7, 4.79)",
+        "era": 4.79
+      },
+      "home_probable": {
+        "name": "Sandy Alcantara",
+        "record": "(13-10, 3.78)",
+        "era": 3.78
+      },
+      "matched_to_snapshot": true,
+      "snapshot_pitchers": [
+        {
+          "side": "away",
+          "pitcher_id": 640455,
+          "pitcher_name": "Sean Manaea",
+          "team": "New York Mets"
+        },
+        {
+          "side": "home",
+          "pitcher_id": 645261,
+          "pitcher_name": "Sandy Alcantara",
+          "team": "Miami Marlins"
+        }
+      ],
+      "snapshot_market_at_run": {
+        "market_book": "DraftKings",
+        "market_total": 8.0,
+        "market_over_odds": "-114",
+        "market_under_odds": "-105",
+        "market_ml_away": "-105",
+        "market_ml_home": "-115",
+        "market_edge": 3.1,
+        "open_total": 7.5,
+        "sao_rotation_away": "901",
+        "sao_rotation_home": "902",
+        "sao_open_total": 7.5,
+        "away_record": "66-78",
+        "home_record": "72-73",
+        "broadcasts": [
+          "MLB.TV",
+          "Marlins.TV",
+          "SNY"
+        ],
+        "sao": {
+          "rotation_away": "901",
+          "rotation_home": "902",
+          "away_slug": "mets",
+          "home_slug": "marlins",
+          "ml_away": "-105",
+          "ml_home": "-115",
+          "total": 8.0,
+          "open_total": 7.5,
+          "total_odds_over": "-114",
+          "total_odds_under": "-105",
+          "runline_away": "-1.5",
+          "runline_home": "+1.5",
+          "source": "scoresandodds"
+        }
+      },
+      "odds": {
+        "book": "DraftKings",
+        "book_provider_id": "100",
+        "favorite_detail": "MIA -115",
+        "open": {
+          "total": 7.5,
+          "over_odds": -113,
+          "under_odds": -107,
+          "ml_away": 113,
+          "ml_home": -136,
+          "runline_away": 1.5,
+          "runline_away_odds": -186,
+          "runline_home": -1.5,
+          "runline_home_odds": 153
+        },
+        "close": {
+          "total": 8.0,
+          "over_odds": -114,
+          "under_odds": -105,
+          "ml_away": -105,
+          "ml_home": -115,
+          "runline_away": -1.5,
+          "runline_away_odds": 160,
+          "runline_home": 1.5,
+          "runline_home_odds": -195
+        },
+        "close_ml_away": -105,
+        "close_ml_home": -115,
+        "close_spread_home": 1.5
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "game_pk": 824714,
+      "espn_event_id": "401816853",
+      "away_team": "Los Angeles Angels",
+      "home_team": "Boston Red Sox",
+      "away_abbr": "LAA",
+      "home_abbr": "BOS",
+      "short_name": "LAA @ BOS",
+      "venue": "Fenway Park",
+      "game_datetime_utc": "2026-09-08T22:45:00Z",
+      "game_datetime_est": "2026-09-08 06:45 PM EDT",
+      "status": "Final",
+      "completed": true,
+      "score_away": 6.0,
+      "score_home": 1.0,
+      "away_record": "55-90",
+      "home_record": "80-66",
+      "away_probable": {
+        "name": "Reid Detmers",
+        "record": "(5-8, 3.32)",
+        "era": 3.32
+      },
+      "home_probable": {
+        "name": "Patrick Sandoval",
+        "record": "(1-5, 4.58)",
+        "era": 4.58
+      },
+      "matched_to_snapshot": true,
+      "snapshot_pitchers": [
+        {
+          "side": "away",
+          "pitcher_id": 672282,
+          "pitcher_name": "Reid Detmers",
+          "team": "Los Angeles Angels"
+        },
+        {
+          "side": "home",
+          "pitcher_id": 663776,
+          "pitcher_name": "Patrick Sandoval",
+          "team": "Boston Red Sox"
+        }
+      ],
+      "snapshot_market_at_run": {
+        "market_book": "DraftKings",
+        "market_total": 7.5,
+        "market_over_odds": "-110",
+        "market_under_odds": "-110",
+        "market_ml_away": "+123",
+        "market_ml_home": "-149",
+        "market_edge": 2.01,
+        "open_total": 8.0,
+        "sao_rotation_away": "915",
+        "sao_rotation_home": "916",
+        "sao_open_total": 8.0,
+        "away_record": "54-90",
+        "home_record": "80-65",
+        "broadcasts": [
+          "MLB.TV",
+          "NESN",
+          "Angels.TV"
+        ],
+        "sao": {
+          "rotation_away": "915",
+          "rotation_home": "916",
+          "away_slug": "angels",
+          "home_slug": "red-sox",
+          "ml_away": "+123",
+          "ml_home": "-149",
+          "total": 7.5,
+          "open_total": 8.0,
+          "total_odds_over": "-110",
+          "total_odds_under": "-110",
+          "runline_away": "+1.5",
+          "runline_home": "-1.5",
+          "source": "scoresandodds"
+        }
+      },
+      "odds": {
+        "book": "DraftKings",
+        "book_provider_id": "100",
+        "favorite_detail": "BOS -149",
+        "open": {
+          "total": 8.0,
+          "over_odds": -102,
+          "under_odds": -118,
+          "ml_away": 121,
+          "ml_home": -146,
+          "runline_away": 1.5,
+          "runline_away_odds": -194,
+          "runline_home": -1.5,
+          "runline_home_odds": 159
+        },
+        "close": {
+          "total": 7.5,
+          "over_odds": -109,
+          "under_odds": -111,
+          "ml_away": 123,
+          "ml_home": -149,
+          "runline_away": 1.5,
+          "runline_away_odds": -175,
+          "runline_home": -1.5,
+          "runline_home_odds": 144
+        },
+        "close_ml_away": 123,
+        "close_ml_home": -149,
+        "close_spread_home": -1.5
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "game_pk": 823500,
+      "espn_event_id": "401816855",
+      "away_team": "Colorado Rockies",
+      "home_team": "New York Yankees",
+      "away_abbr": "COL",
+      "home_abbr": "NYY",
+      "short_name": "COL @ NYY",
+      "venue": "Yankee Stadium",
+      "game_datetime_utc": "2026-09-08T23:05:00Z",
+      "game_datetime_est": "2026-09-08 07:05 PM EDT",
+      "status": "Final",
+      "completed": true,
+      "score_away": 3.0,
+      "score_home": 5.0,
+      "away_record": "55-89",
+      "home_record": "82-62",
+      "away_probable": {
+        "name": "Gabriel Hughes",
+        "record": "(0-7, 5.81)",
+        "era": 5.81
+      },
+      "home_probable": {
+        "name": "Cam Schlittler",
+        "record": "(13-6, 2.01)",
+        "era": 2.01
+      },
+      "matched_to_snapshot": true,
+      "snapshot_pitchers": [
+        {
+          "side": "away",
+          "pitcher_id": 687312,
+          "pitcher_name": "Gabriel Hughes",
+          "team": "Colorado Rockies"
+        },
+        {
+          "side": "home",
+          "pitcher_id": 693645,
+          "pitcher_name": "Cam Schlittler",
+          "team": "New York Yankees"
+        }
+      ],
+      "snapshot_market_at_run": {
+        "market_book": "DraftKings",
+        "market_total": 7.5,
+        "market_over_odds": "-115",
+        "market_under_odds": "-105",
+        "market_ml_away": "+270",
+        "market_ml_home": "-345",
+        "market_edge": 3.63,
+        "open_total": 8.0,
+        "sao_rotation_away": "923",
+        "sao_rotation_home": "924",
+        "sao_open_total": 8.0,
+        "away_record": "55-88",
+        "home_record": "81-62",
+        "broadcasts": [
+          "MLB.TV",
+          "Rockies.TV",
+          "YES"
+        ],
+        "sao": {
+          "rotation_away": "923",
+          "rotation_home": "924",
+          "away_slug": "rockies",
+          "home_slug": "yankees",
+          "ml_away": "+270",
+          "ml_home": "-345",
+          "total": 7.5,
+          "open_total": 8.0,
+          "total_odds_over": "-115",
+          "total_odds_under": "-105",
+          "runline_away": "+1.5",
+          "runline_home": "-1.5",
+          "source": "scoresandodds"
+        }
+      },
+      "odds": {
+        "book": "DraftKings",
+        "book_provider_id": "100",
+        "favorite_detail": "NYY -354",
+        "open": {
+          "total": 8.0,
+          "over_odds": -102,
+          "under_odds": -118,
+          "ml_away": 248,
+          "ml_home": -314,
+          "runline_away": 1.5,
+          "runline_away_odds": 113,
+          "runline_home": -1.5,
+          "runline_home_odds": -136
+        },
+        "close": {
+          "total": 7.5,
+          "over_odds": -113,
+          "under_odds": -107,
+          "ml_away": 277,
+          "ml_home": -354,
+          "runline_away": 1.5,
+          "runline_away_odds": 128,
+          "runline_home": -1.5,
+          "runline_home_odds": -155
+        },
+        "close_ml_away": 277,
+        "close_ml_home": -354,
+        "close_spread_home": -1.5
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "game_pk": 824875,
+      "espn_event_id": "401816859",
+      "away_team": "Tampa Bay Rays",
+      "home_team": "Atlanta Braves",
+      "away_abbr": "TB",
+      "home_abbr": "ATL",
+      "short_name": "TB @ ATL",
+      "venue": "Truist Park",
+      "game_datetime_utc": "2026-09-08T23:15:00Z",
+      "game_datetime_est": "2026-09-08 07:15 PM EDT",
+      "status": "Final",
+      "completed": true,
+      "score_away": 7.0,
+      "score_home": 1.0,
+      "away_record": "86-58",
+      "home_record": "85-60",
+      "away_probable": {
+        "name": "Freddy Peralta",
+        "record": "(8-11, 4.82)",
+        "era": 4.82
+      },
+      "home_probable": {
+        "name": "AJ Smith-Shawver",
+        "record": "(0-2, 7.71)",
+        "era": 7.71
+      },
+      "matched_to_snapshot": true,
+      "snapshot_pitchers": [
+        {
+          "side": "away",
+          "pitcher_id": 642547,
+          "pitcher_name": "Freddy Peralta",
+          "team": "Tampa Bay Rays"
+        },
+        {
+          "side": "home",
+          "pitcher_id": 700363,
+          "pitcher_name": "AJ Smith-Shawver",
+          "team": "Atlanta Braves"
+        }
+      ],
+      "snapshot_market_at_run": {
+        "market_book": "DraftKings",
+        "market_total": 8.5,
+        "market_over_odds": "-115",
+        "market_under_odds": "-105",
+        "market_ml_away": "-103",
+        "market_ml_home": "-117",
+        "market_edge": 5.85,
+        "open_total": 8.0,
+        "sao_rotation_away": "925",
+        "sao_rotation_home": "926",
+        "sao_open_total": 8.0,
+        "away_record": "85-58",
+        "home_record": "85-59",
+        "broadcasts": [
+          "MLB.TV",
+          "BravesVision",
+          "Gray Media",
+          "Rays.TV"
+        ],
+        "sao": {
+          "rotation_away": "925",
+          "rotation_home": "926",
+          "away_slug": "rays",
+          "home_slug": "braves",
+          "ml_away": "-103",
+          "ml_home": "-117",
+          "total": 8.5,
+          "open_total": 8.0,
+          "total_odds_over": "-115",
+          "total_odds_under": "-105",
+          "runline_away": "-1.5",
+          "runline_home": "+1.5",
+          "source": "scoresandodds"
+        }
+      },
+      "odds": {
+        "book": "DraftKings",
+        "book_provider_id": "100",
+        "favorite_detail": "ATL -117",
+        "open": {
+          "total": 8.0,
+          "over_odds": -115,
+          "under_odds": -105,
+          "ml_away": 100,
+          "ml_home": -120,
+          "runline_away": -1.5,
+          "runline_away_odds": 159,
+          "runline_home": 1.5,
+          "runline_home_odds": -194
+        },
+        "close": {
+          "total": 8.5,
+          "over_odds": -115,
+          "under_odds": -105,
+          "ml_away": -103,
+          "ml_home": -117,
+          "runline_away": -1.5,
+          "runline_away_odds": 163,
+          "runline_home": 1.5,
+          "runline_home_odds": -199
+        },
+        "close_ml_away": -103,
+        "close_ml_home": -117,
+        "close_spread_home": 1.5
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "game_pk": 824063,
+      "espn_event_id": "401816860",
+      "away_team": "Arizona Diamondbacks",
+      "home_team": "Kansas City Royals",
+      "away_abbr": "ARI",
+      "home_abbr": "KC",
+      "short_name": "ARI @ KC",
+      "venue": "Kauffman Stadium",
+      "game_datetime_utc": "2026-09-08T23:40:00Z",
+      "game_datetime_est": "2026-09-08 07:40 PM EDT",
+      "status": "Final",
+      "completed": true,
+      "score_away": 5.0,
+      "score_home": 3.0,
+      "away_record": "78-68",
+      "home_record": "64-82",
+      "away_probable": {
+        "name": "Corbin Burnes",
+        "record": "(0-0, 0.00)",
+        "era": 0.0
+      },
+      "home_probable": {
+        "name": "Michael Wacha",
+        "record": "(9-8, 3.25)",
+        "era": 3.25
+      },
+      "matched_to_snapshot": true,
+      "snapshot_pitchers": [
+        {
+          "side": "away",
+          "pitcher_id": 669203,
+          "pitcher_name": "Corbin Burnes",
+          "team": "Arizona Diamondbacks"
+        },
+        {
+          "side": "home",
+          "pitcher_id": 608379,
+          "pitcher_name": "Michael Wacha",
+          "team": "Kansas City Royals"
+        }
+      ],
+      "snapshot_market_at_run": {
+        "market_book": "DraftKings",
+        "market_total": 9.5,
+        "market_over_odds": "+102",
+        "market_under_odds": "-123",
+        "market_ml_away": "-114",
+        "market_ml_home": "-106",
+        "market_edge": 1.91,
+        "open_total": 9.5,
+        "sao_rotation_away": "927",
+        "sao_rotation_home": "928",
+        "sao_open_total": 9.5,
+        "away_record": "77-68",
+        "home_record": "64-81",
+        "broadcasts": [
+          "MLB.TV",
+          "Royals.TV",
+          "DBACKS.TV"
+        ],
+        "sao": {
+          "rotation_away": "927",
+          "rotation_home": "928",
+          "away_slug": "diamondbacks",
+          "home_slug": "royals",
+          "ml_away": "-114",
+          "ml_home": "-106",
+          "total": 9.5,
+          "open_total": 9.5,
+          "total_odds_over": "+102",
+          "total_odds_under": "-123",
+          "runline_away": "-1.5",
+          "runline_home": "+1.5",
+          "source": "scoresandodds"
+        }
+      },
+      "odds": {
+        "book": "DraftKings",
+        "book_provider_id": "100",
+        "favorite_detail": "KC -114",
+        "open": {
+          "total": 9.5,
+          "over_odds": -115,
+          "under_odds": -105,
+          "ml_away": -113,
+          "ml_home": -107,
+          "runline_away": -1.5,
+          "runline_away_odds": 141,
+          "runline_home": 1.5,
+          "runline_home_odds": -171
+        },
+        "close": {
+          "total": 9.0,
+          "over_odds": -110,
+          "under_odds": -110,
+          "ml_away": -106,
+          "ml_home": -114,
+          "runline_away": -1.5,
+          "runline_away_odds": 152,
+          "runline_home": 1.5,
+          "runline_home_odds": -184
+        },
+        "close_ml_away": -106,
+        "close_ml_home": -114,
+        "close_spread_home": 1.5
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "game_pk": 823738,
+      "espn_event_id": "401816861",
+      "away_team": "Chicago Cubs",
+      "home_team": "Milwaukee Brewers",
+      "away_abbr": "CHC",
+      "home_abbr": "MIL",
+      "short_name": "CHC @ MIL",
+      "venue": "American Family Field",
+      "game_datetime_utc": "2026-09-08T23:40:00Z",
+      "game_datetime_est": "2026-09-08 07:40 PM EDT",
+      "status": "Final",
+      "completed": true,
+      "score_away": 3.0,
+      "score_home": 4.0,
+      "away_record": "81-65",
+      "home_record": "90-56",
+      "away_probable": {
+        "name": "David Peterson",
+        "record": "(7-8, 5.28)",
+        "era": 5.28
+      },
+      "home_probable": {
+        "name": "Jacob Misiorowski",
+        "record": "(14-5, 1.95)",
+        "era": 1.95
+      },
+      "matched_to_snapshot": true,
+      "snapshot_pitchers": [
+        {
+          "side": "away",
+          "pitcher_id": 656849,
+          "pitcher_name": "David Peterson",
+          "team": "Chicago Cubs"
+        },
+        {
+          "side": "home",
+          "pitcher_id": 694819,
+          "pitcher_name": "Jacob Misiorowski",
+          "team": "Milwaukee Brewers"
+        }
+      ],
+      "snapshot_market_at_run": {
+        "market_book": "DraftKings",
+        "market_total": 7.0,
+        "market_over_odds": "-122",
+        "market_under_odds": "+102",
+        "market_ml_away": "+168",
+        "market_ml_home": "-205",
+        "market_edge": 4.68,
+        "open_total": 7.5,
+        "sao_rotation_away": "903",
+        "sao_rotation_home": "904",
+        "sao_open_total": 7.5,
+        "away_record": "81-64",
+        "home_record": "89-56",
+        "broadcasts": [
+          "MLB.TV",
+          "Marquee Sports Net",
+          "Brewers.TV"
+        ],
+        "sao": {
+          "rotation_away": "903",
+          "rotation_home": "904",
+          "away_slug": "cubs",
+          "home_slug": "brewers",
+          "ml_away": "+168",
+          "ml_home": "-205",
+          "total": 7.0,
+          "open_total": 7.5,
+          "total_odds_over": "-122",
+          "total_odds_under": "+102",
+          "runline_away": "+1.5",
+          "runline_home": "-1.5",
+          "source": "scoresandodds"
+        }
+      },
+      "odds": {
+        "book": "DraftKings",
+        "book_provider_id": "100",
+        "favorite_detail": "MIL -199",
+        "open": {
+          "total": 7.5,
+          "over_odds": 104,
+          "under_odds": -126,
+          "ml_away": 171,
+          "ml_home": -210,
+          "runline_away": 1.5,
+          "runline_away_odds": -122,
+          "runline_home": -1.5,
+          "runline_home_odds": 102
+        },
+        "close": {
+          "total": 7.0,
+          "over_odds": -122,
+          "under_odds": 102,
+          "ml_away": 163,
+          "ml_home": -199,
+          "runline_away": 1.5,
+          "runline_away_odds": -126,
+          "runline_home": -1.5,
+          "runline_home_odds": 105
+        },
+        "close_ml_away": 163,
+        "close_ml_home": -199,
+        "close_spread_home": -1.5
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "game_pk": 824551,
+      "espn_event_id": "401816862",
+      "away_team": "Pittsburgh Pirates",
+      "home_team": "Chicago White Sox",
+      "away_abbr": "PIT",
+      "home_abbr": "CHW",
+      "short_name": "PIT @ CHW",
+      "venue": "Rate Field",
+      "game_datetime_utc": "2026-09-08T23:40:00Z",
+      "game_datetime_est": "2026-09-08 07:40 PM EDT",
+      "status": "Final",
+      "completed": true,
+      "score_away": 9.0,
+      "score_home": 3.0,
+      "away_record": "72-73",
+      "home_record": "75-69",
+      "away_probable": {
+        "name": "Bubba Chandler",
+        "record": "(7-9, 4.25)",
+        "era": 4.25
+      },
+      "home_probable": {
+        "name": "Sean Burke",
+        "record": "(8-7, 3.58)",
+        "era": 3.58
+      },
+      "matched_to_snapshot": true,
+      "snapshot_pitchers": [
+        {
+          "side": "away",
+          "pitcher_id": 696149,
+          "pitcher_name": "Bubba Chandler",
+          "team": "Pittsburgh Pirates"
+        },
+        {
+          "side": "home",
+          "pitcher_id": 680732,
+          "pitcher_name": "Sean Burke",
+          "team": "Chicago White Sox"
+        }
+      ],
+      "snapshot_market_at_run": {
+        "market_book": "DraftKings",
+        "market_total": 8.5,
+        "market_over_odds": "-105",
+        "market_under_odds": "-114",
+        "market_ml_away": "+119",
+        "market_ml_home": "-144",
+        "market_edge": 4.15,
+        "open_total": 8.0,
+        "sao_rotation_away": "929",
+        "sao_rotation_home": "930",
+        "sao_open_total": 8.0,
+        "away_record": "71-73",
+        "home_record": "75-68",
+        "broadcasts": [
+          "MLB.TV",
+          "CHSN"
+        ],
+        "sao": {
+          "rotation_away": "929",
+          "rotation_home": "930",
+          "away_slug": "pirates",
+          "home_slug": "white-sox",
+          "ml_away": "+119",
+          "ml_home": "-144",
+          "total": 8.5,
+          "open_total": 8.0,
+          "total_odds_over": "-105",
+          "total_odds_under": "-114",
+          "runline_away": "+1.5",
+          "runline_home": "-1.5",
+          "source": "scoresandodds"
+        }
+      },
+      "odds": {
+        "book": "DraftKings",
+        "book_provider_id": "100",
+        "favorite_detail": "CHW -144",
+        "open": {
+          "total": 8.0,
+          "over_odds": -112,
+          "under_odds": -108,
+          "ml_away": 116,
+          "ml_home": -139,
+          "runline_away": 1.5,
+          "runline_away_odds": -171,
+          "runline_home": -1.5,
+          "runline_home_odds": 141
+        },
+        "close": {
+          "total": 8.5,
+          "over_odds": -105,
+          "under_odds": -114,
+          "ml_away": 119,
+          "ml_home": -144,
+          "runline_away": 1.5,
+          "runline_away_odds": -175,
+          "runline_home": -1.5,
+          "runline_home_odds": 144
+        },
+        "close_ml_away": 119,
+        "close_ml_home": -144,
+        "close_spread_home": -1.5
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "game_pk": 823092,
+      "espn_event_id": "401816865",
+      "away_team": "Texas Rangers",
+      "home_team": "Seattle Mariners",
+      "away_abbr": "TEX",
+      "home_abbr": "SEA",
+      "short_name": "TEX @ SEA",
+      "venue": "T-Mobile Park",
+      "game_datetime_utc": "2026-09-09T01:40:00Z",
+      "game_datetime_est": "2026-09-08 09:40 PM EDT",
+      "status": "Final",
+      "completed": true,
+      "score_away": 10.0,
+      "score_home": 5.0,
+      "away_record": "72-73",
+      "home_record": "67-78",
+      "away_probable": {
+        "name": "Cal Quantrill",
+        "record": "(8-5, 2.89)",
+        "era": 2.89
+      },
+      "home_probable": {
+        "name": "Bryce Miller",
+        "record": "(4-9, 4.22)",
+        "era": 4.22
+      },
+      "matched_to_snapshot": true,
+      "snapshot_pitchers": [
+        {
+          "side": "away",
+          "pitcher_id": null,
+          "pitcher_name": null,
+          "team": "Texas Rangers"
+        },
+        {
+          "side": "home",
+          "pitcher_id": null,
+          "pitcher_name": null,
+          "team": "Seattle Mariners"
+        }
+      ],
+      "snapshot_market_at_run": {
+        "market_book": "DraftKings",
+        "market_total": 8.0,
+        "market_over_odds": "-107",
+        "market_under_odds": "-113",
+        "market_ml_away": "+108",
+        "market_ml_home": "-130",
+        "market_edge": 1.03,
+        "open_total": 7.5,
+        "sao_rotation_away": "919",
+        "sao_rotation_home": "920",
+        "sao_open_total": 8.0,
+        "away_record": "71-73",
+        "home_record": "67-77",
+        "broadcasts": [
+          "MLB.TV",
+          "Rangers Sports Network",
+          "Mariners.TV"
+        ],
+        "sao": {
+          "rotation_away": "919",
+          "rotation_home": "920",
+          "away_slug": "rangers",
+          "home_slug": "mariners",
+          "ml_away": "+108",
+          "ml_home": "-130",
+          "total": 8.0,
+          "open_total": 8.0,
+          "total_odds_over": "-107",
+          "total_odds_under": "-113",
+          "runline_away": "+1.5",
+          "runline_home": "-1.5",
+          "source": "scoresandodds"
+        }
+      },
+      "odds": {
+        "book": "DraftKings",
+        "book_provider_id": "100",
+        "favorite_detail": "SEA -126",
+        "open": {
+          "total": 7.5,
+          "over_odds": -115,
+          "under_odds": -104,
+          "ml_away": 123,
+          "ml_home": -148,
+          "runline_away": 1.5,
+          "runline_away_odds": -178,
+          "runline_home": -1.5,
+          "runline_home_odds": 147
+        },
+        "close": {
+          "total": 7.5,
+          "over_odds": -104,
+          "under_odds": -116,
+          "ml_away": 104,
+          "ml_home": -126,
+          "runline_away": 1.5,
+          "runline_away_odds": -199,
+          "runline_home": -1.5,
+          "runline_home_odds": 163
+        },
+        "close_ml_away": 104,
+        "close_ml_home": -126,
+        "close_spread_home": -1.5
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "game_pk": 824957,
+      "espn_event_id": "401816866",
+      "away_team": "Toronto Blue Jays",
+      "home_team": "Athletics",
+      "away_abbr": "TOR",
+      "home_abbr": "ATH",
+      "short_name": "TOR @ ATH",
+      "venue": "Sutter Health Park",
+      "game_datetime_utc": "2026-09-09T01:40:00Z",
+      "game_datetime_est": "2026-09-08 09:40 PM EDT",
+      "status": "Final",
+      "completed": true,
+      "score_away": 4.0,
+      "score_home": 2.0,
+      "away_record": "73-73",
+      "home_record": "58-88",
+      "away_probable": {
+        "name": "Jose Soriano",
+        "record": "(12-7, 3.48)",
+        "era": 3.48
+      },
+      "home_probable": {
+        "name": "Jack Perkins",
+        "record": "(3-11, 6.53)",
+        "era": 6.53
+      },
+      "matched_to_snapshot": true,
+      "snapshot_pitchers": [
+        {
+          "side": "away",
+          "pitcher_id": 667755,
+          "pitcher_name": "José Soriano",
+          "team": "Toronto Blue Jays"
+        },
+        {
+          "side": "home",
+          "pitcher_id": 678022,
+          "pitcher_name": "Jack Perkins",
+          "team": "Athletics"
+        }
+      ],
+      "snapshot_market_at_run": {
+        "market_book": "DraftKings",
+        "market_total": 9.0,
+        "market_over_odds": "-118",
+        "market_under_odds": "-102",
+        "market_ml_away": "-186",
+        "market_ml_home": "+153",
+        "market_edge": 3.65,
+        "open_total": 9.5,
+        "sao_rotation_away": "917",
+        "sao_rotation_home": "918",
+        "sao_open_total": 9.5,
+        "away_record": "72-73",
+        "home_record": "58-87",
+        "broadcasts": [
+          "MLB.TV",
+          "NBC Sports CA",
+          "Sportsnet",
+          "TVA"
+        ],
+        "sao": {
+          "rotation_away": "917",
+          "rotation_home": "918",
+          "away_slug": "blue-jays",
+          "home_slug": "athletics",
+          "ml_away": "-186",
+          "ml_home": "+153",
+          "total": 9.0,
+          "open_total": 9.5,
+          "total_odds_over": "-118",
+          "total_odds_under": "-102",
+          "runline_away": "-1.5",
+          "runline_home": "+1.5",
+          "source": "scoresandodds"
+        }
+      },
+      "odds": {
+        "book": "DraftKings",
+        "book_provider_id": "100",
+        "favorite_detail": "TOR -185",
+        "open": {
+          "total": 9.5,
+          "over_odds": -107,
+          "under_odds": -113,
+          "ml_away": -180,
+          "ml_home": 148,
+          "runline_away": -1.5,
+          "runline_away_odds": -110,
+          "runline_home": 1.5,
+          "runline_home_odds": -110
+        },
+        "close": {
+          "total": 9.0,
+          "over_odds": -115,
+          "under_odds": -105,
+          "ml_away": -185,
+          "ml_home": 152,
+          "runline_away": -1.5,
+          "runline_away_odds": -112,
+          "runline_home": 1.5,
+          "runline_home_odds": -108
+        },
+        "close_ml_away": -185,
+        "close_ml_home": 152,
+        "close_spread_home": 1.5
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "game_pk": 823250,
+      "espn_event_id": "401816867",
+      "away_team": "Washington Nationals",
+      "home_team": "San Diego Padres",
+      "away_abbr": "WSH",
+      "home_abbr": "SD",
+      "short_name": "WSH @ SD",
+      "venue": "Petco Park",
+      "game_datetime_utc": "2026-09-09T01:40:00Z",
+      "game_datetime_est": "2026-09-08 09:40 PM EDT",
+      "status": "Final",
+      "completed": true,
+      "score_away": 4.0,
+      "score_home": 5.0,
+      "away_record": "67-80",
+      "home_record": "77-68",
+      "away_probable": {
+        "name": "Riley Cornelio",
+        "record": "(2-2, 5.26)",
+        "era": 5.26
+      },
+      "home_probable": {
+        "name": "Casey Mize",
+        "record": "(5-9, 3.70)",
+        "era": 3.7
+      },
+      "matched_to_snapshot": true,
+      "snapshot_pitchers": [
+        {
+          "side": "away",
+          "pitcher_id": 683000,
+          "pitcher_name": "Riley Cornelio",
+          "team": "Washington Nationals"
+        },
+        {
+          "side": "home",
+          "pitcher_id": 663554,
+          "pitcher_name": "Casey Mize",
+          "team": "San Diego Padres"
+        }
+      ],
+      "snapshot_market_at_run": {
+        "market_book": "DraftKings",
+        "market_total": 8.0,
+        "market_over_odds": "-107",
+        "market_under_odds": "-113",
+        "market_ml_away": "+158",
+        "market_ml_home": "-193",
+        "market_edge": 6.08,
+        "open_total": 7.5,
+        "sao_rotation_away": "905",
+        "sao_rotation_home": "906",
+        "sao_open_total": 7.5,
+        "away_record": "67-79",
+        "home_record": "76-68",
+        "broadcasts": [
+          "ESPN Unlmtd",
+          "MLB.TV",
+          "Padres.TV",
+          "Nationals.TV"
+        ],
+        "sao": {
+          "rotation_away": "905",
+          "rotation_home": "906",
+          "away_slug": "nationals",
+          "home_slug": "padres",
+          "ml_away": "+158",
+          "ml_home": "-193",
+          "total": 8.0,
+          "open_total": 7.5,
+          "total_odds_over": "-107",
+          "total_odds_under": "-113",
+          "runline_away": "+1.5",
+          "runline_home": "-1.5",
+          "source": "scoresandodds"
+        }
+      },
+      "odds": {
+        "book": "DraftKings",
+        "book_provider_id": "100",
+        "favorite_detail": "SD -193",
+        "open": {
+          "total": 7.5,
+          "over_odds": -118,
+          "under_odds": -102,
+          "ml_away": 159,
+          "ml_home": -194,
+          "runline_away": 1.5,
+          "runline_away_odds": -143,
+          "runline_home": -1.5,
+          "runline_home_odds": 119
+        },
+        "close": {
+          "total": 8.0,
+          "over_odds": -117,
+          "under_odds": -103,
+          "ml_away": 158,
+          "ml_home": -193,
+          "runline_away": 1.5,
+          "runline_away_odds": -136,
+          "runline_home": -1.5,
+          "runline_home_odds": 113
+        },
+        "close_ml_away": 158,
+        "close_ml_home": -193,
+        "close_spread_home": -1.5
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "game_pk": 823174,
+      "espn_event_id": "401816864",
+      "away_team": "St. Louis Cardinals",
+      "home_team": "San Francisco Giants",
+      "away_abbr": "STL",
+      "home_abbr": "SF",
+      "short_name": "STL @ SF",
+      "venue": "Oracle Park",
+      "game_datetime_utc": "2026-09-09T01:45:00Z",
+      "game_datetime_est": "2026-09-08 09:45 PM EDT",
+      "status": "Final",
+      "completed": true,
+      "score_away": 1.0,
+      "score_home": 2.0,
+      "away_record": "72-74",
+      "home_record": "61-85",
+      "away_probable": {
+        "name": "Quinn Mathews",
+        "record": "(1-3, 4.11)",
+        "era": 4.11
+      },
+      "home_probable": {
+        "name": "Landen Roupp",
+        "record": "(9-13, 4.00)",
+        "era": 4.0
+      },
+      "matched_to_snapshot": true,
+      "snapshot_pitchers": [
+        {
+          "side": "away",
+          "pitcher_id": 687273,
+          "pitcher_name": "Quinn Mathews",
+          "team": "St. Louis Cardinals"
+        },
+        {
+          "side": "home",
+          "pitcher_id": 694738,
+          "pitcher_name": "Landen Roupp",
+          "team": "San Francisco Giants"
+        }
+      ],
+      "snapshot_market_at_run": {
+        "market_book": "DraftKings",
+        "market_total": 7.5,
+        "market_over_odds": "-118",
+        "market_under_odds": "-102",
+        "market_ml_away": "-110",
+        "market_ml_home": "-110",
+        "market_edge": 5.29,
+        "open_total": 8.0,
+        "sao_rotation_away": "907",
+        "sao_rotation_home": "908",
+        "sao_open_total": 8.0,
+        "away_record": "72-73",
+        "home_record": "60-85",
+        "broadcasts": [
+          "MLB.TV",
+          "NBC Sports BA",
+          "Cardinals.TV"
+        ],
+        "sao": {
+          "rotation_away": "907",
+          "rotation_home": "908",
+          "away_slug": "cardinals",
+          "home_slug": "giants",
+          "ml_away": "-110",
+          "ml_home": "-110",
+          "total": 7.5,
+          "open_total": 8.0,
+          "total_odds_over": "-118",
+          "total_odds_under": "-102",
+          "runline_away": "-1.5",
+          "runline_home": "+1.5",
+          "source": "scoresandodds"
+        }
+      },
+      "odds": {
+        "book": "DraftKings",
+        "book_provider_id": "100",
+        "favorite_detail": "SF -110",
+        "open": {
+          "total": 8.0,
+          "over_odds": -110,
+          "under_odds": -110,
+          "ml_away": -110,
+          "ml_home": -110,
+          "runline_away": -1.5,
+          "runline_away_odds": 149,
+          "runline_home": 1.5,
+          "runline_home_odds": -181
+        },
+        "close": {
+          "total": 7.5,
+          "over_odds": -118,
+          "under_odds": -102,
+          "ml_away": -110,
+          "ml_home": -110,
+          "runline_away": -1.5,
+          "runline_away_odds": 153,
+          "runline_home": 1.5,
+          "runline_home_odds": -186
+        },
+        "close_ml_away": -110,
+        "close_ml_home": -110,
+        "close_spread_home": 1.5
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "game_pk": 823901,
+      "espn_event_id": "401816863",
+      "away_team": "Cincinnati Reds",
+      "home_team": "Los Angeles Dodgers",
+      "away_abbr": "CIN",
+      "home_abbr": "LAD",
+      "short_name": "CIN @ LAD",
+      "venue": "Dodger Stadium",
+      "game_datetime_utc": "2026-09-09T02:10:00Z",
+      "game_datetime_est": "2026-09-08 10:10 PM EDT",
+      "status": "Final",
+      "completed": true,
+      "score_away": 2.0,
+      "score_home": 3.0,
+      "away_record": "69-76",
+      "home_record": "88-57",
+      "away_probable": {
+        "name": "Nick Lodolo",
+        "record": "(3-4, 5.12)",
+        "era": 5.12
+      },
+      "home_probable": {
+        "name": "Tarik Skubal",
+        "record": "(9-7, 2.84)",
+        "era": 2.84
+      },
+      "matched_to_snapshot": true,
+      "snapshot_pitchers": [
+        {
+          "side": "away",
+          "pitcher_id": 666157,
+          "pitcher_name": "Nick Lodolo",
+          "team": "Cincinnati Reds"
+        },
+        {
+          "side": "home",
+          "pitcher_id": 669373,
+          "pitcher_name": "Tarik Skubal",
+          "team": "Los Angeles Dodgers"
+        }
+      ],
+      "snapshot_market_at_run": {
+        "market_book": "DraftKings",
+        "market_total": 8.0,
+        "market_over_odds": "-108",
+        "market_under_odds": "-112",
+        "market_ml_away": "+250",
+        "market_ml_home": "-316",
+        "market_edge": 4.65,
+        "open_total": 8.5,
+        "sao_rotation_away": "909",
+        "sao_rotation_home": "910",
+        "sao_open_total": 8.5,
+        "away_record": "69-75",
+        "home_record": "87-57",
+        "broadcasts": [
+          "MLB.TV",
+          "SportsNet LA",
+          "Reds.TV"
+        ],
+        "sao": {
+          "rotation_away": "909",
+          "rotation_home": "910",
+          "away_slug": "reds",
+          "home_slug": "dodgers",
+          "ml_away": "+250",
+          "ml_home": "-316",
+          "total": 8.0,
+          "open_total": 8.5,
+          "total_odds_over": "-108",
+          "total_odds_under": "-112",
+          "runline_away": "+1.5",
+          "runline_home": "-1.5",
+          "source": "scoresandodds"
+        }
+      },
+      "odds": {
+        "book": "DraftKings",
+        "book_provider_id": "100",
+        "favorite_detail": "LAD -314",
+        "open": {
+          "total": 8.5,
+          "over_odds": -115,
+          "under_odds": -105,
+          "ml_away": 250,
+          "ml_home": -316,
+          "runline_away": 1.5,
+          "runline_away_odds": 113,
+          "runline_home": -1.5,
+          "runline_home_odds": -136
+        },
+        "close": {
+          "total": 8.0,
+          "over_odds": -107,
+          "under_odds": -113,
+          "ml_away": 249,
+          "ml_home": -314,
+          "runline_away": 1.5,
+          "runline_away_odds": 119,
+          "runline_home": -1.5,
+          "runline_home_odds": -143
+        },
+        "close_ml_away": 249,
+        "close_ml_home": -314,
+        "close_spread_home": -1.5
+      }
+    }
+  ]
+}
